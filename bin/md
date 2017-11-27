@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Function to open remarkable with file
+(remarkable "$1" &> /dev/null &)

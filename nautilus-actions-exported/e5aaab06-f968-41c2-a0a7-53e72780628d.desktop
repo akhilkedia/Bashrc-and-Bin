@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Action
+Name[en_US]=Open In VSCode as Root
+Name[en]=Open In VSCode as Root
+Name[C]=Open In VSCode as Root
+Icon[en_US]=/usr/share/code/resources/app/resources/linux/code.png
+Icon[en]=/usr/share/code/resources/app/resources/linux/code.png
+Icon[C]=/usr/share/code/resources/app/resources/linux/code.png
+TargetLocation=true
+ToolbarLabel[en_US]=Open In VSCode as Root
+ToolbarLabel[en]=Open In VSCode as Root
+ToolbarLabel[C]=Open In VSCode as Root
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+Exec=gksudo code %f
+Path=%f
+MimeTypes=*;!inode/directory;

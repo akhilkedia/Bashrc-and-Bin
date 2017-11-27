@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Function to open meld with files
+(meld "$1" "$2" &> /dev/null &)

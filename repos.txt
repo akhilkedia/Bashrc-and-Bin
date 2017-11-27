@@ -1,0 +1,10 @@
+sudo apt-add-repository ppa:noobslab/icons
+sudo apt-add-repository ppa:wireshark-dev/stable
+sudo apt-add-repository '[arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main'
+sudo apt-add-repository ppa:noobslab/themes
+sudo apt-add-repository ppa:webupd8team/java
+sudo apt-add-repository ppa:noobslab/apps
+sudo apt-add-repository '[arch=amd64,arm64] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse'
+sudo apt-add-repository 'http://archive.getdeb.net/ubuntu xenial-getdeb apps'
+sudo apt-add-repository '[arch=amd64] http://packages.microsoft.com/repos/vscode stable main'
+sudo apt-add-repository ppa:x2go/stable

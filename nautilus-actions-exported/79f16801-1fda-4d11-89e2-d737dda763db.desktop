@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Action
+Name[en_US]=Open Folder as Root
+Name[en]=Open Folder as Root
+Name[C]=Open Folder as Root
+Icon[en_US]=folder-open
+Icon[en]=folder-open
+Icon[C]=folder-open
+TargetLocation=true
+ToolbarLabel[en_US]=Open Folder as Root
+ToolbarLabel[en]=Open Folder as Root
+ToolbarLabel[C]=Open Folder as Root
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+Exec=gksudo nautilus %f
+Path=%f
+MimeTypes=inode/directory;

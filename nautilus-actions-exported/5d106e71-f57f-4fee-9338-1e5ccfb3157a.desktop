@@ -1,0 +1,21 @@
+[Desktop Entry]
+Type=Action
+Name[en_US]=Open In Terminator
+Name[en]=Open In Terminator
+Name[C]=Open In Terminator
+Icon[en_US]=terminator
+Icon[en]=terminator
+Icon[C]=terminator
+TargetLocation=true
+ToolbarLabel[en_US]=Open In Terminator
+ToolbarLabel[en]=Open In Terminator
+ToolbarLabel[C]=Open In Terminator
+Profiles=profile-zero;
+
+[X-Action-Profile profile-zero]
+Name[en_US]=Default profile
+Name[en]=Default profile
+Name[C]=Default profile
+Exec=/usr/local/bin/terminator --new-tab
+Path=%f
+MimeTypes=inode/directory;

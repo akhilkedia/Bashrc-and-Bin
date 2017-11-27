@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Drop all mongodb tables
+mongo --quiet --eval 'db.getMongo().getDBNames().forEach(function(i){db.getSiblingDB(i).dropDatabase()})'
