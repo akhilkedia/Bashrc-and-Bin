@@ -1,21 +1,24 @@
 {
     "env": {
+        "es6": true,
         "node": true
-    },
-    "parserOptions": {
-        "sourceType": "module"
     },
     "extends": [
         "eslint:recommended",
         "google"
     ],
     "rules": {
-        "no-var": "off",
+        "brace-style": "off",
+        "camelcase": "warn",
+        "constructor-super": "warn",
+        "max-len": "off",
+        "new-cap": "off",
+        "no-multi-spaces": "warn",
+        "no-this-before-super": "warn",
+        "no-undef": "warn",
+        "no-unreachable": "warn",
+        "no-unused-vars": "warn",
         "require-jsdoc": "off",
-        "no-console": "off",
-        "eqeqeq": [
-            "warn",
-            "smart"
-        ]
+        "valid-typeof": "warn"
     }
 }

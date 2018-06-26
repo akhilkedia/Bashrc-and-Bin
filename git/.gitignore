@@ -9,6 +9,9 @@
 ehthumbs.db
 Thumbs.db
 
+# node node_modules
+node_modules
+
 # some eclipse files
 .settings/language.settings.xml
 .cproject
