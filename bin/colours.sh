@@ -1,8 +1,7 @@
 _isxrunning=false
 [[ -n "$DISPLAY" ]] && _isxrunning=true
-COLORED MANUAL PAGES {{{
-@see http://www.tuxarena.com/?p=508
-For colourful man pages (CLUG-Wiki style)
+# @see http://www.tuxarena.com/?p=508
+# For colourful man pages (CLUG-Wiki style)
 if $_isxrunning; then
  export PAGER=less
  export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
@@ -13,7 +12,6 @@ if $_isxrunning; then
  export LESS_TERMCAP_ue=$'\E[0m'           # end underline
  export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 fi
-}}}
 
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'

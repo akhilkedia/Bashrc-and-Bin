@@ -1,0 +1,21 @@
+{
+    "env": {
+        "node": true
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "extends": [
+        "eslint:recommended",
+        "google"
+    ],
+    "rules": {
+        "no-var": "off",
+        "require-jsdoc": "off",
+        "no-console": "off",
+        "eqeqeq": [
+            "warn",
+            "smart"
+        ]
+    }
+}

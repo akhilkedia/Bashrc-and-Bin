@@ -1,0 +1,18 @@
+[user]
+	name = Akhil Kedia
+	email = akhil.kedia@samsung.com
+[color]
+	ui = auto
+[credential]
+	helper = store
+[core]
+	excludesfile = ~/.gitignore
+[diff]
+	guitool = default-difftool
+	tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[difftool]
+	prompt = false
+[push]
+	default = simple
