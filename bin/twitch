@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Extract and Compress archives using 7z
+streamlink $1 best --hls-segment-threads 10 -o ./t90.mp4 --loglevel debug

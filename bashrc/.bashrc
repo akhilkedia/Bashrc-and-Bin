@@ -10,14 +10,14 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+# HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=10000
-HISTFILESIZE=20000
+# HISTSIZE=10000
+# HISTFILESIZE=20000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -135,13 +135,14 @@ if [ -d "/usr/local/cuda-9.0/bin" ]; then
   export PATH=/usr/local/cuda-9.0/bin${PATH:+:${PATH}}
 fi
 # ADB path
-if [ -d "/usr/local/cuda-9.0/bin" ]; then
+if [ -d "$HOME/opt/android-sdk/platform-tools" ]; then
   export PATH=$HOME/opt/android-sdk/platform-tools:$PATH
 fi
 
 source ~/bin/aliases.sh
 source ~/bin/shopt_options.sh
 source ~/bin/colours.sh
+source ~/bin/historyhh.sh
 
 
 
