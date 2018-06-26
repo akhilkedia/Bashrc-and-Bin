@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 stow -t ~/ bashrc
 stow -t ~/ bin
 stow -t ~/ eslint

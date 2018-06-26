@@ -3,6 +3,9 @@
         "es6": true,
         "node": true
     },
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
     "extends": [
         "eslint:recommended",
         "google"
@@ -13,6 +16,8 @@
         "constructor-super": "warn",
         "max-len": "off",
         "new-cap": "off",
+        "no-console": "off",
+        "no-constant-condition": "off",
         "no-multi-spaces": "warn",
         "no-this-before-super": "warn",
         "no-undef": "warn",

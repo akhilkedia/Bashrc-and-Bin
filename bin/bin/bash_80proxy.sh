@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # How to use - At line 191, edit the variable "proxy" and "cert" in the function "proxy_on"
 # Call this script with "sudo ./bash_80proxy.sh on" to turn on proxy settings, "sudo ./bash_80proxy.sh" to turn proxy off.
