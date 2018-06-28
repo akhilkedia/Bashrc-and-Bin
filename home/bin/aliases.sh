@@ -1,3 +1,6 @@
+# alias for nvm to work
+alias sudo='sudo env PATH=$PATH:$NVM_BIN'
+
 # Alias rm to trash-put
 alias rm='trash-put'
 
