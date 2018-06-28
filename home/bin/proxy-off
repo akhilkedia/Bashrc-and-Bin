@@ -142,8 +142,9 @@ function proxy_plugin_pip() {
 	local proxy=$1
 	if [ -z "$proxy" ]; then
 		sudo sed -i '/cert=/{s/.*//;x;d;};x;p;${x;p;}' /etc/pip.conf
+		sudo sed -i '/^$/d' /etc/pip.conf
 	else
-		printf '[global]\ncert=/usr/local/share/ca-certificates/proxy.crt\n' | sudo tee -a /etc/pip.conf
+		printf '\n[global]\ncert=/usr/local/share/ca-certificates/proxy.crt\n' | sudo tee -a /etc/pip.conf
 	fi
 }
 
@@ -173,14 +174,23 @@ function proxy_on() {
 
 function proxy_off() {
 	proxy_plugin_gsettings
+	echo 1
 	proxy_plugin_environment
+	echo 2
 	proxy_plugin_apt
+	echo 3
 	proxy_plugin_shell
+	echo 4
 	proxy_plugin_cert
+	echo 5
 	proxy_plugin_npm
+	echo 6
 	proxy_plugin_java_maven
+	echo 7
 	proxy_plugin_wget
+	echo 8
 	proxy_plugin_pip
+	echo 9
 }
 
 if [ "$1" == "on" ]; then
