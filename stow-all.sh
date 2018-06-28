@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-stow -t ~/ bashrc
-stow -t ~/ bin
-stow -t ~/ eslint
-stow -t ~/ git
-stow -t ~/ liquidprompt
-stow -t ~/ inputrc
+stow -t ~/ home
 
 sudo stow -t /usr/share/meld/ meld
