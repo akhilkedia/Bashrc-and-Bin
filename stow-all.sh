@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-stow -t ~/ home
+stow -R -t ~/ home
 
-sudo stow -t /usr/share/meld/ meld
+sudo stow -R -t /usr/share/meld/ meld
