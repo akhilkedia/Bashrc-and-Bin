@@ -18,6 +18,10 @@ node_modules
 .project
 .tproject
 
+# some direnv files
+.direnv/*
+.envrc
+
 # vscode files
 .vscode/*
 !.vscode/settings.json
