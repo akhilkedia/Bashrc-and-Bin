@@ -115,12 +115,12 @@ fi
 
 source ~/bin/historyhh.sh
 
-_direnv_hook() {
-  eval "$(direnv export bash)";
-};
-if ! [[ "$PROMPT_COMMAND" =~ _direnv_hook ]]; then
-  PROMPT_COMMAND="_direnv_hook;$PROMPT_COMMAND";
-fi
+# _direnv_hook() {
+#   eval "$(direnv export bash)";
+# };
+# if ! [[ "$PROMPT_COMMAND" =~ _direnv_hook ]]; then
+#   PROMPT_COMMAND="_direnv_hook;$PROMPT_COMMAND";
+# fi
 
 # Liquid Prompt
 [[ $- = *i* ]] && source ~/opt/liquidprompt/liquidprompt
