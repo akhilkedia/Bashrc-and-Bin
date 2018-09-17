@@ -1,3 +1,21 @@
 #!/usr/bin/env bash
-#Compress archives using 7z
-7z a "$1".zip "$1"
+# function to compress file or folder to tgz with progress bar.
+
+if [ $# -eq 0 ] ; then
+    # number of arguments is zero
+    echo "You must specify a directory or file to tar/gzip." >&2
+    exit 1
+fi
+
+if  [ ! -d "$1" ] && [ ! -f "$1" ] ; then
+    echo "File/Directory not found." >&2
+    exit 1
+fi
+
+if ! [ -x "$(command -v pv)" ]; then
+    echo 'Error: pv is not installed.  Please install it.' >&2
+    exit 1
+fi
+
+directory="$1"
+tar cf - "$directory" -P | pv -s $(du -sb "$directory" | awk '{print $1}') | gzip > "$directory".tgz

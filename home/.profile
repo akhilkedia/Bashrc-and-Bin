@@ -49,6 +49,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -d "$HOME/opt/android-sdk/platform-tools" ] && PATH=$HOME/opt/android-sdk/platform-tools:${PATH}
 [ -d "$HOME/opt/shellcheck" ] && PATH=$HOME/opt/shellcheck:${PATH}
 [ -d "$HOME/opt/shfmt" ] && PATH=$HOME/opt/shfmt:${PATH}
+[ -d "$HOME/opt/pv" ] && PATH=$HOME/opt/pv:${PATH}
 [ -d "$HOME/opt/code/bin" ] && PATH=$HOME/opt/code/bin:${PATH}
 [ -d "$HOME/opt/pycharm/bin" ] && PATH=$HOME/opt/pycharm/bin:${PATH}
 

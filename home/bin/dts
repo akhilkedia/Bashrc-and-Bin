@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# Function to download a URL and transfer it to supercom's download folder.
+
+REMOTE_LOCATION="sup:/home/sr5/akhil.kedia/downloads/"
+
+if [ $# -eq 0 ] ; then
+    # number of arguments is zero
+    echo "You must specify a URL to download" >&2
+    exit 1
+fi
+
+TEMP_DIR=$(mktemp -d)
+
+if  [ ! -d "$TEMP_DIR" ] ; then
+    echo "Cannot create temp dir" >&2
+    exit 1
+fi
+
+
+if ! cd "$TEMP_DIR"; then
+    echo "cannot cd to temp dir" >&2
+    exit 1
+fi
+
+echo "Downloading to $TEMP_DIR"
+
+if ! wget "$1" --content-disposition ; then
+    echo "cannot download url" >&2
+    if ! cd -; then
+        echo "cannot cd back" >&2
+        exit 1
+    fi
+fi
+
+for file in "$TEMP_DIR"/*; do
+    echo "Sending file $file to supercom"
+    if ! scp "$file" "$REMOTE_LOCATION"; then
+        echo "Cannot sent $file to $REMOTE_LOCATION"
+    fi
+done
+
+rm -rf "$TEMP_DIR"
+cd - || echo "cannot cd back" && exit 1

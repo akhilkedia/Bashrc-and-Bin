@@ -113,7 +113,7 @@ if ! shopt -oq posix; then
     fi
 fi
 
-source ~/bin/historyhh.sh
+source ~/bin/hstr.sh
 
 # _direnv_hook() {
 #   eval "$(direnv export bash)";
