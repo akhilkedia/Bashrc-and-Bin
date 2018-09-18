@@ -50,6 +50,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -d "$HOME/opt/shellcheck" ] && PATH=$HOME/opt/shellcheck:${PATH}
 [ -d "$HOME/opt/shfmt" ] && PATH=$HOME/opt/shfmt:${PATH}
 [ -d "$HOME/opt/pv" ] && PATH=$HOME/opt/pv:${PATH}
+[ -d "$HOME/opt/bazel" ] && PATH=$HOME/opt/bazel:${PATH}
 [ -d "$HOME/opt/code/bin" ] && PATH=$HOME/opt/code/bin:${PATH}
 [ -d "$HOME/opt/pycharm/bin" ] && PATH=$HOME/opt/pycharm/bin:${PATH}
 
