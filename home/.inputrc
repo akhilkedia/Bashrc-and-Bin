@@ -16,3 +16,6 @@ set mark-symlinked-directories on
 
 # Dont complete suffixes of current word being completed in completing in the middle of a word
 set skip-completed-text on
+
+# coloured tab completions
+set colored-stats on

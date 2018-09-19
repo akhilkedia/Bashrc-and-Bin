@@ -125,6 +125,34 @@ source ~/bin/hstr.sh
 # Liquid Prompt
 [[ $- = *i* ]] && source ~/opt/liquidprompt/liquidprompt
 
+# ### nnn
+# export NNN_TMPFILE="$HOME/tmp/nnn"
+# n()
+# {
+#         nnn -i "$@"
+#         if [ -f "$NNN_TMPFILE" ]; then
+#                 cd "$NNN_TMPFILE"
+#                 rm -f "$NNN_TMPFILE" > /dev/null
+#         fi
+# }
+
+# function rangero {
+#     tempfile="$(mktemp -t tmp.XXXXXX)"
+#     ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+#     test -f "$tempfile" &&
+#     if [ "$(cat -- "$tempfile")" != "$(echo -n `pwd`)" ]; then
+#         cd -- "$(cat "$tempfile")"
+#     fi
+#     rm -f -- "$tempfile"
+# }
+# function ranger1 {
+#     echo $@
+# }
+# [[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"
+
+# # This binds Ctrl-O to ranger-cd:
+# bind '"\C-o":"### \C-a ranger1 \C-j'
+
 source ~/bin/aliases.sh
 source ~/bin/shopt_options.sh
 
