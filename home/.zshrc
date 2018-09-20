@@ -54,8 +54,8 @@ alias d='dirs -v'
 # hstr
 [[ $- = *i* ]] && source ~/bin/hstr.sh
 
-# # Zsh autosuggestions
-# source ~/opt/zsh-autosuggestions/zsh-autosuggestions.zsh
+# Zsh autosuggestions
+source ~/opt/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Syntax Highlighting
 source ~/opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
