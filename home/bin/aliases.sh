@@ -1,3 +1,6 @@
+# alias for git without proxy
+alias pgit='HTTP_PROXY="" HTTPS_PROXY="" FTP_PROXY="" http_proxy="" https_proxy="" ftp_proxy="" git'
+
 # alias for nvm to work
 alias sudo='sudo env PATH=$PATH:$NVM_BIN'
 
@@ -5,7 +8,7 @@ alias sudo='sudo env PATH=$PATH:$NVM_BIN'
 (command -v trash-put >/dev/null 2>&1) && alias rm='trash-put'
 
 # Alias man to open in browser
-(command -v google-chrome >/dev/null 2>&1) && alias man='man --html=google-chrome'
+(command -v google-chrome >/dev/null 2>&1) && alias mann='man --html=google-chrome'
 
 # Alias msi-keyboard backlight
 alias light='msikeyboard -t rasta -i low'
