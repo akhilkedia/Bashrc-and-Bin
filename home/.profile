@@ -64,6 +64,9 @@ export NVM_DIR="$HOME/.nvm"
 # Bleugh.
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
 
+# Import colours
+source "$HOME/bin/colours.sh"
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
 	# include .bashrc if it exists

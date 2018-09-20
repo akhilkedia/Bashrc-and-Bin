@@ -4,13 +4,10 @@ export WORDCHARS="*?_-.[]~&;!#$%^(){}<>"
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
 
-# Import colours
-source "$HOME/bin/colours.sh"
-
 # Completion options
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' insert-unambiguous true
-zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' original false
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle :compinstall filename '/home/akhil/.zshrc'
