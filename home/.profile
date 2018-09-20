@@ -55,9 +55,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -d "$HOME/opt/shellcheck" ] && PATH=$HOME/opt/shellcheck:${PATH}
 [ -d "$HOME/opt/shfmt" ] && PATH=$HOME/opt/shfmt:${PATH}
 
-# Import colours
-source "$HOME/bin/colours.sh"
-
 # Set cuda visible devices for genie
 [ "$(hostname -s)" = "genie" ] && export CUDA_VISIBLE_DEVICES=3
 

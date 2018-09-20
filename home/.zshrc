@@ -4,6 +4,9 @@ export WORDCHARS="*?_-.[]~&;!#$%^(){}<>"
 bindkey '^[[1;5C' emacs-forward-word
 bindkey '^[[1;5D' emacs-backward-word
 
+# Import colours
+source "$HOME/bin/colours.sh"
+
 # Completion options
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' insert-unambiguous true
@@ -36,18 +39,6 @@ case "$TERM" in
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -72,8 +63,8 @@ source ~/opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Liquid Prompt
 [[ $- = *i* ]] && source ~/opt/liquidprompt/liquidprompt
 
-export REPORTTIME=3
+# ctrl+f file path completion
+[[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"
 
 source ~/bin/aliases.sh
-[[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"
 
