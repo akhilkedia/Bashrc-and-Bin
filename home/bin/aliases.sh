@@ -1,3 +1,9 @@
+# colours
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
 # alias for git without proxy
 alias pgit='HTTP_PROXY="" HTTPS_PROXY="" FTP_PROXY="" http_proxy="" https_proxy="" ftp_proxy="" git'
 
