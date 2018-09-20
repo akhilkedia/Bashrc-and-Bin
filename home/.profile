@@ -47,15 +47,16 @@ export NVM_DIR="$HOME/.nvm"
 
 # Programs in opt
 [ -d "$HOME/opt/android-sdk/platform-tools" ] && PATH=$HOME/opt/android-sdk/platform-tools:${PATH}
-[ -d "$HOME/opt/shellcheck" ] && PATH=$HOME/opt/shellcheck:${PATH}
-[ -d "$HOME/opt/shfmt" ] && PATH=$HOME/opt/shfmt:${PATH}
-[ -d "$HOME/opt/pv" ] && PATH=$HOME/opt/pv:${PATH}
 [ -d "$HOME/opt/bazel" ] && PATH=$HOME/opt/bazel:${PATH}
 [ -d "$HOME/opt/code/bin" ] && PATH=$HOME/opt/code/bin:${PATH}
+[ -d "$HOME/opt/pv" ] && PATH=$HOME/opt/pv:${PATH}
 [ -d "$HOME/opt/pycharm/bin" ] && PATH=$HOME/opt/pycharm/bin:${PATH}
+[ -d "$HOME/opt/qfc/bin" ] && PATH=$HOME/opt/qfc/bin:${PATH}
+[ -d "$HOME/opt/shellcheck" ] && PATH=$HOME/opt/shellcheck:${PATH}
+[ -d "$HOME/opt/shfmt" ] && PATH=$HOME/opt/shfmt:${PATH}
 
 # Import colours
-source ~/bin/colours.sh
+source "$HOME/bin/colours.sh"
 
 # Set cuda visible devices for genie
 [ "$(hostname -s)" = "genie" ] && export CUDA_VISIBLE_DEVICES=3
