@@ -3,7 +3,7 @@ _isxrunning=false
 # @see http://www.tuxarena.com/?p=508
 # For colourful man pages (CLUG-Wiki style)
 if $_isxrunning; then
-    export PAGER=most
+    export PAGER=less
     export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
     export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
     export LESS_TERMCAP_me=$'\E[0m'           # end mode
