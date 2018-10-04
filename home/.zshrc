@@ -61,7 +61,7 @@ source ~/opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [[ $- = *i* ]] && source ~/opt/liquidprompt/liquidprompt
 
 # ctrl+f file path completion
-[[ -s "$HOME/.qfc/bin/qfc.sh" ]] && source "$HOME/.qfc/bin/qfc.sh"
+[[ -s "$HOME/opt/qfc/bin/qfc.sh" ]] && source "$HOME/opt/qfc/bin/qfc.sh"
 
 source ~/bin/aliases.sh
 
