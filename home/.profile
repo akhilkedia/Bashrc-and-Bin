@@ -16,6 +16,8 @@ export ANDROID_NDK=$HOME/opt/android-sdk/ndk-bundle
 
 # set PATH so it includes user's private bin directories
 export PATH="$HOME/bin:$HOME/.local/bin${PATH:+:${PATH}}"
+export MANPATH="${MANPATH:+:${MANPATH}}"
+export INFOPATH="${INFOPATH:+:${INFOPATH}}"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 export CPATH="${CPATH:+:${CPATH}}"
 
@@ -59,7 +61,7 @@ export NVM_DIR="$HOME/.nvm"
 [ "$(hostname -s)" = "genie" ] && export CUDA_VISIBLE_DEVICES=3
 
 # Activate Virtual env
-[ -d "$HOME/opt/virt-tf-1.5/bin/" ] && source "$HOME/opt/virt-tf-1.5/bin/activate"
+[ -d "$HOME/opt/virt-tf-1.11/bin/" ] && source "$HOME/opt/virt-tf-1.11/bin/activate"
 
 # Bleugh.
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
