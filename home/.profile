@@ -54,6 +54,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -d "$HOME/opt/qfc/bin" ] && PATH=$HOME/opt/qfc/bin:${PATH}
 [ -d "$HOME/opt/shellcheck" ] && PATH=$HOME/opt/shellcheck:${PATH}
 [ -d "$HOME/opt/shfmt" ] && PATH=$HOME/opt/shfmt:${PATH}
+[ -d "$HOME/opt/git/bin" ] && PATH=$HOME/opt/git/bin:${PATH}
 
 # Set cuda visible devices for genie
 [ "$(hostname -s)" = "genie" ] && export CUDA_VISIBLE_DEVICES=3
