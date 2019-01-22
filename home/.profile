@@ -73,13 +73,21 @@ source "$HOME/bin/colours.sh"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
-	# include .bashrc if it exists
-	if [ -f "$HOME/.bashrc" ]; then
-		. "$HOME/.bashrc"
-	fi
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+        . "$HOME/.bashrc"
+    fi
 elif [ -n "$ZSH_VERSION" ]; then
-	# include .bashrc if it exists
-	if [ -f "$HOME/.zshrc" ]; then
-		. "$HOME/.zshrc"
-	fi
+    # include .bashrc if it exists
+    if [ -f "$HOME/.zshrc" ]; then
+        . "$HOME/.zshrc"
+    fi
+fi
+
+if [[ $- == *i* ]] && [ -n "$BASH_VERSION" ]; then
+    zsh=$(command -v zsh)
+    if [ -x "$zsh" ]; then
+        export SHELL="$zsh"
+        exec "$zsh"
+    fi
 fi
