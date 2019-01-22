@@ -57,6 +57,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Set cuda visible devices for genie
 [ "$(hostname -s)" = "genie" ] && export CUDA_VISIBLE_DEVICES=3
+export NO_PROXY="10.113.67.111,$NO_PROXY"
 
 # Activate Virtual env
 [ -d "$HOME/opt/virt-tf-1.5/bin/" ] && source "$HOME/opt/virt-tf-1.5/bin/activate"
