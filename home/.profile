@@ -70,6 +70,7 @@ export LIBRARY_PATH="$LD_LIBRARY_PATH"
 
 # Import colours
 source "$HOME/bin/colours.sh"
+[ -s "$HOME/.proxy.sh" ] && source "$HOME/.proxy.sh"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then

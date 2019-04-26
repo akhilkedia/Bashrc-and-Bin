@@ -18,4 +18,4 @@ if ! [ -x "$(command -v pv)" ]; then
 fi
 
 directory="$1"
-tar cf - "$directory" -P | pv -s $(du -sb "$directory" | awk '{print $1}') | gzip > "$directory".tgz
+tar cf - "$directory" -P | pv -s $(du -sb "$directory" | awk '{print $1}') | gzip > "$directory".tar.gz

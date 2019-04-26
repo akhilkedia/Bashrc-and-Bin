@@ -13,7 +13,7 @@ Thumbs.db
 node_modules
 
 # some eclipse files
-.settings/language.settings.xml
+.settings
 .cproject
 .project
 .tproject
