@@ -16,6 +16,6 @@ Profiles=profile-zero;
 Name[en_US]=Default profile
 Name[en]=Default profile
 Name[C]=Default profile
-Exec=/usr/local/bin/terminator --new-tab
+Exec=/usr/bin/terminator --new-tab
 Path=%f
 MimeTypes=inode/directory;
