@@ -21,9 +21,20 @@ export INFOPATH="${INFOPATH:+:${INFOPATH}}"
 export LD_LIBRARY_PATH="${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}"
 export CPATH="${CPATH:+:${CPATH}}"
 
+# For vnc to play nice with GUIs
+[ -d "$HOME/xdg_runtime_dir" ] && export XDG_RUNTIME_DIR=$HOME/xdg_runtime_dir
+
 # Supercom module options
-(command -v module >/dev/null 2>&1) && module load cuda9.0
-(command -v module >/dev/null 2>&1) && module load cudnn_v7.1
+unset TMOUT
+export MODULEPATH=/apps/supercom_env_rhel7:/usr/share/Modules/modulefiles:/etc/modulefiles
+export MODULESHOME=/usr/share/Modules
+module ()
+{
+    eval `/usr/bin/modulecmd bash $*`
+}
+# (command -v module >/dev/null 2>&1) && module load cuda10.0 cudnn_v7.4_cuda10.0 nccl_2.4.7 openMPI_v3.1
+[ "$(whoami)" = akhil.kedia ] && (command -v module >/dev/null 2>&1) && module load cuda9.0
+[ "$(whoami)" = akhil.kedia ] && (command -v module >/dev/null 2>&1) && module load cudnn_v7.1
 
 # Cuda paths
 [ -d "/usr/local/cuda-9.0/" ] && export CUDA_INSTALL_DIR="/usr/local/cuda-9.0/"
@@ -62,10 +73,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -d "$HOME/opt/shellcheck" ] && PATH=$HOME/opt/shellcheck:${PATH}
 [ -d "$HOME/opt/shfmt" ] && PATH=$HOME/opt/shfmt:${PATH}
 [ -d "$HOME/opt/git/bin" ] && PATH=$HOME/opt/git/bin:${PATH}
+[ -d "$HOME/opt/zsh/bin" ] && PATH=$HOME/opt/zsh/bin:${PATH}
+[ -d "$HOME/opt/pigz/bin" ] && PATH=$HOME/opt/pigz/bin:${PATH}
 
 # Set cuda visible devices for genie
 [ "$(hostname -s)" = "genie" ] && export CUDA_VISIBLE_DEVICES=3
-export NO_PROXY="10.113.67.111,$NO_PROXY"
 
 # Activate Virtual env
 [ -d "$HOME/opt/virt-tf-1.14/bin/" ] && source "$HOME/opt/virt-tf-1.14/bin/activate"
@@ -94,6 +106,6 @@ if [[ $- == *i* ]] && [ -n "$BASH_VERSION" ]; then
     zsh=$(command -v zsh)
     if [ -x "$zsh" ]; then
         export SHELL="$zsh"
-        exec "$zsh"
+        # exec "$zsh"
     fi
 fi
