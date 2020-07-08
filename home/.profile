@@ -24,6 +24,9 @@ export CPATH="${CPATH:+:${CPATH}}"
 # For vnc to play nice with GUIs
 [ -d "$HOME/xdg_runtime_dir" ] && export XDG_RUNTIME_DIR=$HOME/xdg_runtime_dir
 
+# Set cuda visible devices for genie
+[ "$(hostname -s)" = "genie" ] && export CUDA_VISIBLE_DEVICES=3
+
 # Supercom module options
 unset TMOUT
 export MODULEPATH=/apps/supercom_env_rhel7:/usr/share/Modules/modulefiles:/etc/modulefiles
@@ -58,11 +61,6 @@ module ()
 [ -d "$HOME/opt/nccl/lib/" ] && LD_LIBRARY_PATH="$HOME/opt/nccl/lib/:${LD_LIBRARY_PATH}"
 [ -d "$HOME/opt/nccl/include/" ] && export CPATH="$HOME/opt/nccl/include/"
 
-#PATH for Node Version Manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-
 # Programs in opt
 [ -d "$HOME/opt/android-sdk/platform-tools" ] && PATH=$HOME/opt/android-sdk/platform-tools:${PATH}
 [ -d "$HOME/opt/bazel" ] && PATH=$HOME/opt/bazel:${PATH}
@@ -75,12 +73,19 @@ export NVM_DIR="$HOME/.nvm"
 [ -d "$HOME/opt/git/bin" ] && PATH=$HOME/opt/git/bin:${PATH}
 [ -d "$HOME/opt/zsh/bin" ] && PATH=$HOME/opt/zsh/bin:${PATH}
 [ -d "$HOME/opt/pigz/bin" ] && PATH=$HOME/opt/pigz/bin:${PATH}
-
-# Set cuda visible devices for genie
-[ "$(hostname -s)" = "genie" ] && export CUDA_VISIBLE_DEVICES=3
+[ -d "$HOME/opt/transcrypt/" ] && PATH=$HOME/opt/transcrypt:${PATH}
 
 # Activate Virtual env
 [ -d "$HOME/opt/virt-tf-1.14/bin/" ] && source "$HOME/opt/virt-tf-1.14/bin/activate"
+
+#PATH for Node Version Manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+#PATH for Ruby Version Manager
+[ -d "$HOME/.rvm/bin" ] && PATH=$HOME/.rvm/bin:${PATH}
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && \. "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Bleugh.
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
