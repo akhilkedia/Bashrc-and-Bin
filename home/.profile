@@ -26,12 +26,17 @@ export CPATH="${CPATH:+:${CPATH}}"
 (command -v module >/dev/null 2>&1) && module load cudnn_v7.1
 
 # Cuda paths
-[ -d "/usr/local/cuda-9.1/bin" ] && PATH=/usr/local/cuda-9.1/bin:${PATH}
 [ -d "/usr/local/cuda-9.0/" ] && export CUDA_INSTALL_DIR="/usr/local/cuda-9.0/"
 [ -d "/usr/local/cuda-9.0/bin/" ] && PATH="/usr/local/cuda-9.0/bin/:${PATH}"
 [ -d "/usr/local/cuda-9.0/lib64/" ] && LD_LIBRARY_PATH="/usr/local/cuda-9.0/lib64/:${LD_LIBRARY_PATH}"
 [ -d "/usr/local/cuda-9.0/include/" ] && CPATH="/usr/local/cuda-9.0/include/:${CPATH}"
 [ -d "/usr/local/cuda-9.0/extras/CUPTI/lib64/" ] && LD_LIBRARY_PATH="/usr/local/cuda-9.0/extras/CUPTI/lib64/:${LD_LIBRARY_PATH}"
+
+[ -d "/usr/local/cuda-10.0/bin/" ] && PATH="/usr/local/cuda-10.0/bin/:${PATH}"
+[ -d "/usr/local/cuda-10.0/lib64/" ] && LD_LIBRARY_PATH="/usr/local/cuda-10.0/lib64/:${LD_LIBRARY_PATH}"
+[ -d "/usr/local/cuda-10.0/include/" ] && CPATH="/usr/local/cuda-10.0/include/:${CPATH}"
+[ -d "/usr/local/cuda-10.0/extras/CUPTI/lib64/" ] && LD_LIBRARY_PATH="/usr/local/cuda-10.0/extras/CUPTI/lib64/:${LD_LIBRARY_PATH}"
+[ -d "/usr/local/cuda-10.0/" ] && export CUDA_INSTALL_DIR="/usr/local/cuda-10.0/"
 
 # Tensorrt
 [ -d "$HOME/opt/tensorrt/lib/" ] && LD_LIBRARY_PATH="$HOME/opt/tensorrt/lib/:${LD_LIBRARY_PATH}"
@@ -63,7 +68,7 @@ export NVM_DIR="$HOME/.nvm"
 export NO_PROXY="10.113.67.111,$NO_PROXY"
 
 # Activate Virtual env
-[ -d "$HOME/opt/virt-tf-1.11/bin/" ] && source "$HOME/opt/virt-tf-1.11/bin/activate"
+[ -d "$HOME/opt/virt-tf-1.14/bin/" ] && source "$HOME/opt/virt-tf-1.14/bin/activate"
 
 # Bleugh.
 export LIBRARY_PATH="$LD_LIBRARY_PATH"

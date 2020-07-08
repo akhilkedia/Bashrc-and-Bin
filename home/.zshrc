@@ -13,7 +13,7 @@ zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 zstyle ':completion:*' original false
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-zstyle :compinstall filename '/home/akhil/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -68,3 +68,7 @@ source ~/opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 source ~/bin/aliases.sh
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
