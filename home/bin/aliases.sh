@@ -23,10 +23,12 @@ alias light='msikeyboard -t rasta -i low'
 alias getkorbit='scp -r korbit:/home/ubuntu/btc-trade/stats /home/akhil/Akhil/trading'
 
 # sshfs supercom
-alias supmount='sshfs -o IdentityFile=~/.ssh/id_rsa -o allow_other -o reconnect -o max_readahead=90000 -o big_writes akhil.kedia@202.20.185.100:/home/sr6/akhil.kedia/ /home/akhil/sup/'
-alias supunmount='fusermount -u /home/akhil/sup'
-alias supqamount='sshfs -o IdentityFile=~/.ssh/id_rsa -o allow_other -o reconnect -o max_readahead=90000 -o big_writes akhil.kedia@202.20.185.100:/project_scratch/qa/akhil/ /home/akhil/qa_sup/'
-alias supqaunmount='fusermount -u /home/akhil/qa_sup'
+alias supmount='sshfs -o IdentityFile=~/.ssh/id_rsa -o compression=no -o max_readahead=90000 -o large_read -o big_writes -o allow_other -o reconnect akhil.kedia@202.20.185.100:/home/sr6/akhil.kedia/ /home/akhil/sup/'
+alias supunmount='fusermount -uz /home/akhil/sup'
+alias supcaramount='sshfs -o IdentityFile=~/.ssh/id_rsa -o compression=no -o max_readahead=90000 -o large_read -o big_writes -o allow_other -o reconnect akhil.kedia@202.20.185.100:/project_scratch/cara/akhil/ /home/akhil/cara_sup/'
+alias supcaraunmount='fusermount -uz /home/akhil/cara_sup'
+alias geniemount='sshfs -o IdentityFile=~/.ssh/id_rsa -o compression=no -o max_readahead=90000 -o large_read -o big_writes -o allow_other -o reconnect akhil@genie:/home/akhil/ /home/akhil/genie/'
+alias genieunmount='fusermount -uz /home/akhil/genie'
 
 # Supercom aliases
 alias wsmi='watch -n 0.5 nvidia-smi'

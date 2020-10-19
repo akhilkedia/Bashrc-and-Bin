@@ -7,6 +7,8 @@
 	helper = store
 [core]
 	excludesfile = ~/.gitignore
+	checkStat = minimal
+	trustctime = false
 [diff]
 	guitool = default-difftool
 	tool = default-difftool
@@ -15,4 +17,7 @@
 [difftool]
 	prompt = false
 [push]
-	default = simple
+	default = current
+[pull]
+    rebase = false
+

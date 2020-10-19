@@ -11,8 +11,8 @@
 export SHELLCHECK_OPTS="-e SC1090"
 
 # export ANDROID_HOME
-export ANDROID_HOME=$HOME/opt/android-sdk/
-export ANDROID_NDK=$HOME/opt/android-sdk/ndk-bundle
+[ -d "$HOME/opt/android/android-sdk" ] && export ANDROID_HOME="$HOME/opt/android/android-sdk"
+[ -d "$HOME/opt/android-sdk" ] && export ANDROID_HOME="$HOME/opt/android-sdk"
 
 # set PATH so it includes user's private bin directories
 export PATH="$HOME/bin:$HOME/.local/bin${PATH:+:${PATH}}"
@@ -62,7 +62,7 @@ module ()
 [ -d "$HOME/opt/nccl/include/" ] && export CPATH="$HOME/opt/nccl/include/"
 
 # Programs in opt
-[ -d "$HOME/opt/android-sdk/platform-tools" ] && PATH=$HOME/opt/android-sdk/platform-tools:${PATH}
+[ -d "$HOME/opt/android/android-sdk/platform-tools" ] && PATH=$HOME/opt/android/android-sdk/platform-tools:${PATH}
 [ -d "$HOME/opt/bazel" ] && PATH=$HOME/opt/bazel:${PATH}
 [ -d "$HOME/opt/code/bin" ] && PATH=$HOME/opt/code/bin:${PATH}
 [ -d "$HOME/opt/pv" ] && PATH=$HOME/opt/pv:${PATH}
@@ -74,6 +74,10 @@ module ()
 [ -d "$HOME/opt/zsh/bin" ] && PATH=$HOME/opt/zsh/bin:${PATH}
 [ -d "$HOME/opt/pigz/bin" ] && PATH=$HOME/opt/pigz/bin:${PATH}
 [ -d "$HOME/opt/transcrypt/" ] && PATH=$HOME/opt/transcrypt:${PATH}
+[ -d "$HOME/opt/jsonpps/" ] && PATH=$HOME/opt/jsonpps:${PATH}
+[ -d "$HOME/opt/perl/bin" ] && PATH=$HOME/opt/perl/bin:${PATH}
+[ -d "$HOME/opt/parallel/bin" ] && PATH=$HOME/opt/parallel/bin:${PATH}
+[ -d "$HOME/opt/fzf/bin" ] && PATH=$HOME/opt/fzf/bin:${PATH}
 
 # Activate Virtual env
 [ -d "$HOME/opt/virt-tf-1.14/bin/" ] && source "$HOME/opt/virt-tf-1.14/bin/activate"

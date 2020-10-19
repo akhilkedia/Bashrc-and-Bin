@@ -1,0 +1,15 @@
+#!/bin/sh
+TERM_PID=$(pgrep gnome-terminal) # get first gnome-terminal's PID
+if [ -z "$TERM_PID" ]
+then
+    gnome-terminal
+    TERM_PID=$(pgrep gnome-terminal)
+fi
+WID=$(wmctrl -lp | awk -v pid=$TERM_PID '$3==pid{print $1;exit;}') # get window id
+
+# WID=$(xprop -root | grep "_NET_ACTIVE_WINDOW(WINDOW)"| awk '{print $5}')
+xdotool windowfocus $WID
+xdotool key ctrl+shift+t
+xdotool type "cd $1
+"
+wmctrl -i -a $WID

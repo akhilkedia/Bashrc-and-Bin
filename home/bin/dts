@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Function to download a URL and transfer it to supercom's download folder.
 
-REMOTE_LOCATION="sup:/home/sr5/akhil.kedia/downloads/"
+REMOTE_LOCATION="sup:/home/sr6/akhil.kedia/downloads/"
 
 if [ $# -eq 0 ] ; then
     # number of arguments is zero

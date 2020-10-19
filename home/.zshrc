@@ -1,3 +1,11 @@
+
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # forward and backward-by-wrod shortcuts
 export WORDCHARS="*?_-.[]~&;!#$%^(){}<>"
 # This is ctrl + right-arrow. Who thought of these stupid nomenclature for key-presses?!
@@ -30,14 +38,20 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# If this is an xterm set the title to user@host:dir
+
 case "$TERM" in
-    xterm*|rxvt*)
-        PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-    *)
-    ;;
+    xterm*)
+        precmd () {
+            pre_name=''
+            if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+                print -Pn "\e]0;%m@:%~\a"
+            else
+                print -Pn "\e]0;%~\a"
+            fi
+            }
+        ;;
 esac
+
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -54,14 +68,15 @@ alias d='dirs -v'
 # hstr
 [[ $- = *i* ]] && source ~/bin/hstr.sh
 
+
 # Zsh autosuggestions
 source ~/opt/zsh-autosuggestions/zsh-autosuggestions.zsh
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=true
+export ZSH_AUTOSUGGEST_USE_ASYNC=true
 
-# Syntax Highlighting
-source ~/opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Liquid Prompt
-[[ $- = *i* ]] && source ~/opt/liquidprompt/liquidprompt
+source ~/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # ctrl+f file path completion
 [[ -s "$HOME/opt/qfc/bin/qfc.sh" ]] && source "$HOME/opt/qfc/bin/qfc.sh"
@@ -72,3 +87,31 @@ source ~/bin/aliases.sh
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/akhil/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/akhil/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/akhil/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/akhil/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+PATH="/home/akhil/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/akhil/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/akhil/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/akhil/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/akhil/perl5"; export PERL_MM_OPT;
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Syntax Highlighting
+source ~/opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
