@@ -14,7 +14,7 @@ alias sudo='sudo env PATH=$PATH:$NVM_BIN'
 (command -v trash-put >/dev/null 2>&1) && alias rm='trash-put'
 
 # Alias man to open in browser
-(command -v google-chrome >/dev/null 2>&1) && alias mann='man --html=google-chrome'
+(command -v firefox >/dev/null 2>&1) && alias mann='man -H"firefox -new-instance -P '\''default'\''" '
 
 # Alias msi-keyboard backlight
 alias light='msikeyboard -t rasta -i low'

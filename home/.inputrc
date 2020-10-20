@@ -5,6 +5,9 @@ $include /etc/inputrc
 # Perform file completion in a case insensitive fashion
 set completion-ignore-case on
 
+# List all matches in case multiple possible completions are possible
+set show-all-if-ambiguous on
+
 # Treat hyphens and underscores as equivalent
 set completion-map-case on
 
@@ -19,3 +22,6 @@ set skip-completed-text on
 
 # coloured tab completions
 set colored-stats on
+
+# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
+set match-hidden-files off

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+function o() {
+	if [ $# -eq 0 ]; then
+		xdg-open .  > /dev/null & disown;
+	else
+		xdg-open "$@"  > /dev/null & disown;
+	fi;
+}
