@@ -1,5 +1,6 @@
 if [[ $ZSHRC_RUN!=yes ]]; then
     export ZSHRC_RUN=yes
+    setopt interactivecomments
     # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
     # Initialization code that may require console input (password prompts, [y/n]
     # confirmations, etc.) must go above this block; everything else may go below.
@@ -116,4 +117,7 @@ if [[ $ZSHRC_RUN!=yes ]]; then
 
     # Syntax Highlighting
     source ~/opt/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+    # Import colours
+    source "$HOME/bin/colours.sh"
 fi

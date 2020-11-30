@@ -1,0 +1,20 @@
+#!/bin/bash
+
+cd $1
+
+for f in *.pdf; do
+  echo "$f"
+  npages=$(pdfinfo "$f"|grep 'Pages:'|sed 's/[^0-9]*//g')
+  modulo=$(($npages %2))
+  if [ $modulo -eq 1 ]; then
+    qpdf --empty --pages "$f" "/home/akhil/shared/pageblanche.pdf" -- "aligned_$f"
+  else
+    cp "$f" "aligned_$f"
+  fi
+done
+
+qpdf --verbose --empty --pages aligned_* -- "all.pdf"
+
+rm -rf aligned_*.pdf
+
+cd -

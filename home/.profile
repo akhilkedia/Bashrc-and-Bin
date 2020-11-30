@@ -82,20 +82,18 @@ module ()
 # Activate Virtual env
 [ -d "$HOME/opt/virt-tf-1.14/bin/" ] && source "$HOME/opt/virt-tf-1.14/bin/activate"
 
-#PATH for Node Version Manager
+# PATH for Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-#PATH for Ruby Version Manager
+# PATH for Ruby Version Manager
 [ -d "$HOME/.rvm/bin" ] && PATH=$HOME/.rvm/bin:${PATH}
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && \. "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && \. "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session as a function
 
 # Bleugh.
 export LIBRARY_PATH="$LD_LIBRARY_PATH"
 
-# Import colours
-source "$HOME/bin/colours.sh"
 [ -s "$HOME/.proxy.sh" ] && source "$HOME/.proxy.sh"
 
 # if running bash

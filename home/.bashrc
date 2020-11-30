@@ -145,6 +145,8 @@ source ~/bin/aliases.sh
 source ~/bin/shopt_options.sh
 
 
+# Import colours
+source "$HOME/bin/colours.sh"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/akhil/.sdkman"

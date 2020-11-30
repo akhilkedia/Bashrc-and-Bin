@@ -23,6 +23,7 @@
 	checkStat = minimal
 	trustctime = false
 	untrackedCache = true
+	editor = nano
 [diff]
 	guitool = default-difftool
 	tool = default-difftool
