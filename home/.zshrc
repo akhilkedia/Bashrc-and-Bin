@@ -1,5 +1,13 @@
 if [[ $ZSHRC_RUN!=yes ]]; then
+    if [[ $- == *i* ]] && [ -n "$BASH_VERSION" ]; then
+        zsh=$(command -v zsh)
+        if [ -x "$zsh" ]; then
+            export SHELL="$zsh"
+            # exec "$zsh"
+        fi
+    fi
     export ZSHRC_RUN=yes
+    export TMOUT=0
     setopt interactivecomments
     # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
     # Initialization code that may require console input (password prompts, [y/n]
@@ -106,12 +114,13 @@ if [[ $ZSHRC_RUN!=yes ]]; then
     # <<< conda initialize <<<
 
 
-    PATH="/home/akhil/perl5/bin${PATH:+:${PATH}}"; export PATH;
-    PERL5LIB="/home/akhil/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-    PERL_LOCAL_LIB_ROOT="/home/akhil/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-    PERL_MB_OPT="--install_base \"/home/akhil/perl5\""; export PERL_MB_OPT;
-    PERL_MM_OPT="INSTALL_BASE=/home/akhil/perl5"; export PERL_MM_OPT;
+    # PATH="/home/akhil/perl5/bin${PATH:+:${PATH}}"; export PATH;
+    # PERL5LIB="/home/akhil/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+    # PERL_LOCAL_LIB_ROOT="/home/akhil/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+    # PERL_MB_OPT="--install_base \"/home/akhil/perl5\""; export PERL_MB_OPT;
+    # PERL_MM_OPT="INSTALL_BASE=/home/akhil/perl5"; export PERL_MM_OPT;
 
+    source $HOME/opt/powerlevel10k/powerlevel10k.zsh-theme
     # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
     [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
